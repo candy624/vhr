@@ -4,11 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3960c582-9172-44c1-80bd-b04016cf2442" name="Default Changelist" comment="" />
+    <list default="true" id="3960c582-9172-44c1-80bd-b04016cf2442" name="Default Changelist" comment="vue页面编写 router,store,main.js&#10;后台配置类编写">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/CustomFilterInvocationSecurityMetadataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/CustomUrlDecisionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/LoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/converter/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vhr/vhrserver/vhr-model/src/main/java/org/javaboy/vhr/model/ResqBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-model/src/main/java/org/javaboy/vhr/model/RespBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuehr/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/views/Home.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -36,9 +60,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vhr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -51,16 +83,37 @@
       <option name="presentableId" value="Default" />
       <updated>1603609132855</updated>
       <workItem from="1603609134570" duration="46000" />
+      <workItem from="1603633631608" duration="596000" />
+      <workItem from="1603724837749" duration="314000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="vue页面编写 router,store,main.js&#10;后台配置类编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue页面编写 router,store,main.js&#10;后台配置类编写" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="310" key="FileChooserDialogImpl" timestamp="1603609179003">
+    <state x="740" y="310" key="FileChooserDialogImpl" timestamp="1603634231899">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="740" y="310" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1603609179003" />
+    <state x="740" y="310" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1603634231899" />
+    <state x="765" y="472" key="Github.CreateGistDialog" timestamp="1603634080858">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="765" y="472" key="Github.CreateGistDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1603634080858" />
   </component>
 </project>
