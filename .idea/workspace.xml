@@ -3,28 +3,27 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3960c582-9172-44c1-80bd-b04016cf2442" name="Default Changelist" comment="vue页面编写 router,store,main.js&#10;后台配置类编写">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/CustomFilterInvocationSecurityMetadataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/CustomUrlDecisionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/LoginFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/converter/DateConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vhr/vhrserver/vhr-model/src/main/java/org/javaboy/vhr/model/ResqBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-model/src/main/java/org/javaboy/vhr/model/RespBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vhr/vhrserver/vhr-web/src/main/java/org/javaboy/vhr/web/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuehr/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vuehr/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +83,30 @@
       <updated>1603609132855</updated>
       <workItem from="1603609134570" duration="46000" />
       <workItem from="1603633631608" duration="596000" />
-      <workItem from="1603724837749" duration="314000" />
+      <workItem from="1603724837749" duration="646000" />
     </task>
+    <task id="LOCAL-00001" summary="vue页面编写 router,store,main.js&#10;后台配置类编写">
+      <created>1603725172313</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603725172313</updated>
+    </task>
+    <task id="LOCAL-00002" summary="vue页面编写 router,store,main.js&#10;后台配置类编写">
+      <created>1603725207269</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603725207269</updated>
+    </task>
+    <task id="LOCAL-00003" summary="vue页面编写 router,store,main.js&#10;后台配置类编写">
+      <created>1603725285344</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603725285344</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +128,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="vue页面编写 router,store,main.js&#10;后台配置类编写" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="685" y="375" key="#Notifications" timestamp="1603725483978">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="685" y="375" key="#Notifications/0.30.1920.1050@0.30.1920.1050" timestamp="1603725483978" />
     <state x="740" y="310" key="FileChooserDialogImpl" timestamp="1603634231899">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -119,6 +144,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="440" y="129" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1603725151438" />
+    <state x="552" y="288" key="Vcs.Push.Dialog.v2" timestamp="1603725350883">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="552" y="288" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1603725350883" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1603724912903">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

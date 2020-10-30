@@ -49,22 +49,22 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    content(content) {
-      content.state.stomp = Stomp.over(new SockJS('/ws/ep'))
-      content.state.stomp.content({}, success => {
-        content.state.stomp.subscribe('/user/queue/chat', msg => {
+    connect(context) {
+      context.state.stomp = Stomp.over(new sockJS('/ws/ep'))
+      context.state.stomp.connect({}, success => {
+        context.state.stomp.subscribe('/user/queue/chat', msg => {
           let receiveMsg = JSON.parse(msg.body)
-          if(!content.state.currentSession || receiveMsg.from != content.state.currentSession.username) {
+          if(!context.state.currentSession || receiveMsg.from != context.state.currentSession.username) {
             Notification.info({
               title: '[' + receiveMsg + ']发来一条消息',
               message: receiveMsg.content.length > 10 ? receiveMsg.content.substr(0, 10) : receiveMsg.content,
               position: 'bottom-right'
             })
-            Vue.set(content.state.isDot, content.state.currentHr.username + "#" + receiveMsg.from, true)
+            Vue.set(context.state.isDot, context.state.currentHr.username + "#" + receiveMsg.from, true)
           }
           receiveMsg.notSelf = true
           receiveMsg.to = receiveMsg.from
-          content.commit('addMessage', receiveMsg)
+          context.commit('addMessage', receiveMsg)
         })
       }, error => {
 

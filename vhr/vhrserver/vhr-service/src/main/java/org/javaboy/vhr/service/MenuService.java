@@ -17,7 +17,7 @@ import java.util.List;
  * Created by candy on 2020/10/25.
  */
 @Service
-@CacheConfig(cacheNames = "menu_cache")
+@CacheConfig(cacheNames = "menus_cache")
 public class MenuService {
     @Resource
     private MenuMapper menuMapper;

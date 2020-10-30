@@ -12,6 +12,7 @@
             @click="goChat"
           ></el-button>
           <el-dropdown click="userInfo" @command="commandHandler">
+            <el-dropdown-menu></el-dropdown-menu>
             <span class="el-dropdowm-link">
               {{ user.name }}<i><img :src="user.usseface"/></i>
             </span>
@@ -28,7 +29,7 @@
       <el-container>
         <el-aside width="200px">
           <el-menu router unique-opened>
-            <el-submenu :key="index" v-for="(item, index) in routes">
+            <el-submenu :index="index + ''" :key="index" v-for="(item, index) in routes">
               <template slot="title">
                 <i
                   style="color: #409eff; margin-left: 5px"
@@ -48,13 +49,13 @@
         <el-main>
           <el-breadcrumb
             separator-class="el-icon-arrow-right"
-            v-if="this.$router.currentHr.path != '/home'"
+            v-if="this.$router.currentRoute.path != '/home'"
           >
             <el-breadcrumb-item :to="{ path: '/home' }"
               >首页</el-breadcrumb-item
             >
             <el-breadcrumb-item>{{
-              this.$router.currentHr.name
+              this.$router.currentRoute.name
             }}</el-breadcrumb-item>
           </el-breadcrumb>
           <div
@@ -71,7 +72,7 @@
 </template>
 
 <script>
-import { filter } from "vue/types/umd";
+// import { filter } from "vue/types/umd";
 export default {
   name: "Home",
   data() {
@@ -79,9 +80,10 @@ export default {
   },
   computed: {
     routes() {
-      return this.$store.store.routes.filter(function(routes) {
-        return !routes.hidden;
-      });
+      // return this.$store.state.routes.filter(function(routes) {
+      //   return !routes.hidden;
+      // });
+      return this.$store.state.routes
     },
     user() {
       return this.$store.state.currentHr;

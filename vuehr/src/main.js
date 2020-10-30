@@ -6,14 +6,18 @@ import element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(element)
+Vue.prototype.$alert = element.MessageBox.alert
+Vue.prototype.$confirm = element.MessageBox.confirm
 
 import {
   postRequest,
   postKeyValueRequest,
   putRequest,
   deleteRequest,
-  getRequest
-} from './utils/api.js'
+  getRequest,
+} from '@utils/api'
+import {initMenu} from "./utils/menus"
+
 
 Vue.prototype.postRequest = postRequest;
 Vue.prototype.postKeyValueRequest = postKeyValueRequest;
@@ -27,7 +31,8 @@ router.beforeEach((to, from, next) => {
   if (to.path == '/') {
     next()
   } else {
-    if (window.sessionStorage.getId('user')) {
+    if (window.sessionStorage.getItem('user')) {
+      initMenu(router, store)
       next()
     } else {
       next('/?redirect=' + to.path)

@@ -6,6 +6,7 @@
       v-loading="loading"
       element-loading-text="正在登录..."
       element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(0, 0, 0, 0.8)"
       :model="loginForm"
       class="loginContainer"
     >
@@ -78,14 +79,15 @@ export default {
       checked: true,
       rules: {
         username: [{ required: true, message: "请输入用户名", tigger: "blur" }],
-        password: [{ required: true, message: "请输入面膜", tigger: "blur" }],
+        password: [{ required: true, message: "请输入密码", tigger: "blur" }],
         codes: [{ required: true, message: "请输入验证码", tigger: "blur" }]
       }
     };
   },
   methods: {
     updateVerifyCode() {
-      this.vcUrl = "/verfiyCode?time=" + new Date();
+      console.log("wdnmd");
+      this.vcUrl = "/verifyCode?time=" + new Date();
     },
     submitLogin() {
       this.$refs.loginForm.validate(valid => {
@@ -94,14 +96,14 @@ export default {
           this.postRequest("/doLogin", this.loginForm).then(resp => {
             this.loading = false;
             if (resp) {
-              this.$store.commit("INT_CURRENTHR", resp.obj);
+              this.$store.commit("INIT_CURRENTHR", resp.obj);
               window.sessionStorage.setItem("user", JSON.stringify(resp.obj));
-              let path = this.$store.query.redirect;
-              this.$store.replace(
+              let path = this.$route.query.redirect;
+              this.$router.replace(
                 path == "/" || path == undefined ? "/home" : path
               );
             } else {
-              this.vcUrl = "/verfitCode?time=" + new Date();
+              this.vcUrl = "/verifyCode?time=" + new Date();
             }
           });
         } else {

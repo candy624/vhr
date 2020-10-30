@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -23,16 +24,19 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Resource
     SessionRegistry sessionRegistry;
 
-    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response){
-        if (!request.getMethod().equals("POST")) throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
+        if (!request.getMethod().equals("POST")) {
+            throw new AuthenticationServiceException(
+                    "Authentication method not supported: " + request.getMethod());
+        }
         String verify_code = (String) request.getSession().getAttribute("verify_code");
-        if (request.getContentType().contains(MediaType.APPLICATION_JSON_VALUE)) {
+        if (request.getContentType().contains(MediaType.APPLICATION_JSON_VALUE) || request.getContentType().contains(MediaType.APPLICATION_JSON_UTF8_VALUE)) {
             Map<String, String> loginData = new HashMap<>();
             try {
                 loginData = new ObjectMapper().readValue(request.getInputStream(), Map.class);
             } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
+            }finally {
                 String code = loginData.get("code");
                 checkCode(response, code, verify_code);
             }
@@ -45,7 +49,8 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
                 password = "";
             }
             username = username.trim();
-            UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
+            UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(
+                    username, password);
             setDetails(request, authRequest);
             Hr principal = new Hr();
             principal.setUsername(username);
