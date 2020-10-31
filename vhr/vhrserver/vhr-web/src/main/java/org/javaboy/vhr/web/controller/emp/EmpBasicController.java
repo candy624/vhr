@@ -54,7 +54,7 @@ public class EmpBasicController {
         return RespBean.error("删除失败!");
     }
 
-    @PutMapping("")
+    @PutMapping("/")
     public RespBean updateEmp(@RequestBody Employee employee) {
         if (employeeService.updateEmp(employee) == 1) {
             return RespBean.ok("更新成功!");
@@ -98,6 +98,7 @@ public class EmpBasicController {
         return POIUtils.employee2Excel(list);
     }
 
+    @PostMapping("/import")
     public RespBean importData(MultipartFile file) {
         List<Employee> list = POIUtils.excel2Employee(file, nationService.getAllNations(), politicsstatusService.getAllPoliticsstauts(), departmentService.getAllDepartments(), positionService.getAllPositions(), jobLevelService.getAllJobLevels());
         if (employeeService.addEmps(list) == 1) {

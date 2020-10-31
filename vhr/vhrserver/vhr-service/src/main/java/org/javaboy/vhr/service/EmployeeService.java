@@ -85,6 +85,7 @@ public class EmployeeService {
 
     public RespPageBean getEmployeeByPageWithSalary(Integer page, Integer size) {
         if (page != null && size != null) {
+            System.out.println(page);
             page = (page - 1) * size;
         }
         List<Employee> list = employeeMapper.getEmployeeByPageWithSalary(page, size);
