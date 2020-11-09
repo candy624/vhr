@@ -1,8 +1,11 @@
 package org.javaboy.vhr.web.controller.emp;
 
+import org.javaboy.vhr.common.annotation.Log;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.*;
 import org.javaboy.vhr.service.*;
 import org.javaboy.vhr.utils.POIUtils;
+import org.javaboy.vhr.common.enums.BusinessType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -39,6 +42,7 @@ public class EmpBasicController {
     }
 
     @PostMapping("/")
+    @Log(title = "员工资料", businessType = BusinessType.INSERT)
     public RespBean addEmp(@RequestBody Employee employee) {
         if (employeeService.addEmp(employee) == 1) {
             return RespBean.ok("添加成功!");
@@ -47,6 +51,7 @@ public class EmpBasicController {
     }
 
     @DeleteMapping("/{id}")
+    @Log(title = "员工资料", businessType = BusinessType.DELETE)
     public RespBean deleteEmpById(@PathVariable Integer id) {
         if (employeeService.deleteEmpByEid(id) == 1) {
             return RespBean.ok("删除成功!");
@@ -55,6 +60,7 @@ public class EmpBasicController {
     }
 
     @PutMapping("/")
+    @Log(title = "员工资料", businessType = BusinessType.UPDATE)
     public RespBean updateEmp(@RequestBody Employee employee) {
         if (employeeService.updateEmp(employee) == 1) {
             return RespBean.ok("更新成功!");
@@ -93,12 +99,14 @@ public class EmpBasicController {
     }
 
     @GetMapping("/export")
+    @Log(title = "员工资料", businessType = BusinessType.EXPORT)
     public ResponseEntity<byte[]> exportData() {
         List<Employee> list = (List<Employee>) employeeService.getEmployeeByPage(null, null, new Employee(), null).getData();
         return POIUtils.employee2Excel(list);
     }
 
     @PostMapping("/import")
+    @Log(title = "员工资料", businessType = BusinessType.IMPORT)
     public RespBean importData(MultipartFile file) {
         List<Employee> list = POIUtils.excel2Employee(file, nationService.getAllNations(), politicsstatusService.getAllPoliticsstauts(), departmentService.getAllDepartments(), positionService.getAllPositions(), jobLevelService.getAllJobLevels());
         if (employeeService.addEmps(list) == 1) {
