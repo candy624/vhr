@@ -839,7 +839,9 @@ SELECT|sys.sys_config:null
     <table id="270" parent="27" name="menu_role"/>
     <table id="271" parent="27" name="msgcontent"/>
     <table id="272" parent="27" name="nation"/>
-    <table id="273" parent="27" name="oplog"/>
+    <table id="273" parent="27" name="oplog">
+      <Comment>操作日志记录</Comment>
+    </table>
     <table id="274" parent="27" name="politicsstatus"/>
     <table id="275" parent="27" name="position"/>
     <table id="276" parent="27" name="role"/>
@@ -1717,262 +1719,316 @@ SELECT|sys.sys_config:null
     </key>
     <column id="459" parent="273" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <Comment>日志主键</Comment>
+      <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="460" parent="273" name="addDate">
+    <column id="460" parent="273" name="title">
       <Position>2</Position>
-      <Comment>添加日期</Comment>
-      <DataType>date|0s</DataType>
+      <Comment>模块标题</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="461" parent="273" name="operate">
+    <column id="461" parent="273" name="business_type">
       <Position>3</Position>
-      <Comment>操作内容</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <Comment>业务类型（0其它 1新增 2修改 3删除）</Comment>
+      <DataType>int(2)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="462" parent="273" name="hrid">
+    <column id="462" parent="273" name="method">
       <Position>4</Position>
-      <Comment>操作员ID</Comment>
-      <DataType>int(11)|0s</DataType>
+      <Comment>方法名称</Comment>
+      <DataType>varchar(100)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <index id="463" parent="273" name="hrid">
-      <ColNames>hrid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="464" parent="273" name="PRIMARY">
+    <column id="463" parent="273" name="request_method">
+      <Position>5</Position>
+      <Comment>请求方式</Comment>
+      <DataType>varchar(10)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="464" parent="273" name="oper_name">
+      <Position>6</Position>
+      <Comment>操作员人员</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="465" parent="273" name="oper_url">
+      <Position>7</Position>
+      <Comment>请求URL</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="466" parent="273" name="oper_ip">
+      <Position>8</Position>
+      <Comment>主机地址</Comment>
+      <DataType>varchar(50)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="467" parent="273" name="oper_location">
+      <Position>9</Position>
+      <Comment>操作地点</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="468" parent="273" name="oper_param">
+      <Position>10</Position>
+      <Comment>请求参数</Comment>
+      <DataType>varchar(2000)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="469" parent="273" name="json_result">
+      <Position>11</Position>
+      <Comment>返回参数</Comment>
+      <DataType>varchar(2000)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="470" parent="273" name="status">
+      <Position>12</Position>
+      <Comment>操作状态（0正常 1异常）</Comment>
+      <DataType>int(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="471" parent="273" name="error_msg">
+      <Position>13</Position>
+      <Comment>错误消息</Comment>
+      <DataType>varchar(2000)|0s</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="472" parent="273" name="oper_time">
+      <Position>14</Position>
+      <Comment>操作时间</Comment>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="473" parent="273" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="465" parent="273" name="oplog_ibfk_1">
-      <ColNames>hrid</ColNames>
-      <RefTableName>hr</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="466" parent="274" name="id">
+    <column id="474" parent="274" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="467" parent="274" name="name">
+    <column id="475" parent="274" name="name">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
     </column>
-    <key id="468" parent="274" name="PRIMARY">
+    <key id="476" parent="274" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="469" parent="275" name="id">
+    <column id="477" parent="275" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="470" parent="275" name="name">
+    <column id="478" parent="275" name="name">
       <Position>2</Position>
       <Comment>职位</Comment>
       <DataType>varchar(32)|0s</DataType>
     </column>
-    <column id="471" parent="275" name="createDate">
+    <column id="479" parent="275" name="createDate">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="472" parent="275" name="enabled">
+    <column id="480" parent="275" name="enabled">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
     </column>
-    <index id="473" parent="275" name="name">
+    <index id="481" parent="275" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="474" parent="275" name="PRIMARY">
+    <key id="482" parent="275" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="475" parent="275" name="name">
+    <key id="483" parent="275" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="476" parent="276" name="id">
+    <column id="484" parent="276" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="477" parent="276" name="name">
+    <column id="485" parent="276" name="name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
     </column>
-    <column id="478" parent="276" name="nameZh">
+    <column id="486" parent="276" name="nameZh">
       <Position>3</Position>
       <Comment>角色名称</Comment>
       <DataType>varchar(64)|0s</DataType>
     </column>
-    <key id="479" parent="276" name="PRIMARY">
+    <key id="487" parent="276" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="480" parent="277" name="id">
+    <column id="488" parent="277" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="481" parent="277" name="basicSalary">
+    <column id="489" parent="277" name="basicSalary">
       <Position>2</Position>
       <Comment>基本工资</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="482" parent="277" name="bonus">
+    <column id="490" parent="277" name="bonus">
       <Position>3</Position>
       <Comment>奖金</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="483" parent="277" name="lunchSalary">
+    <column id="491" parent="277" name="lunchSalary">
       <Position>4</Position>
       <Comment>午餐补助</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="484" parent="277" name="trafficSalary">
+    <column id="492" parent="277" name="trafficSalary">
       <Position>5</Position>
       <Comment>交通补助</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="485" parent="277" name="allSalary">
+    <column id="493" parent="277" name="allSalary">
       <Position>6</Position>
       <Comment>应发工资</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="486" parent="277" name="pensionBase">
+    <column id="494" parent="277" name="pensionBase">
       <Position>7</Position>
       <Comment>养老金基数</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="487" parent="277" name="pensionPer">
+    <column id="495" parent="277" name="pensionPer">
       <Position>8</Position>
       <Comment>养老金比率</Comment>
       <DataType>float|0s</DataType>
     </column>
-    <column id="488" parent="277" name="createDate">
+    <column id="496" parent="277" name="createDate">
       <Position>9</Position>
       <Comment>启用时间</Comment>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="489" parent="277" name="medicalBase">
+    <column id="497" parent="277" name="medicalBase">
       <Position>10</Position>
       <Comment>医疗基数</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="490" parent="277" name="medicalPer">
+    <column id="498" parent="277" name="medicalPer">
       <Position>11</Position>
       <Comment>医疗保险比率</Comment>
       <DataType>float|0s</DataType>
     </column>
-    <column id="491" parent="277" name="accumulationFundBase">
+    <column id="499" parent="277" name="accumulationFundBase">
       <Position>12</Position>
       <Comment>公积金基数</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="492" parent="277" name="accumulationFundPer">
+    <column id="500" parent="277" name="accumulationFundPer">
       <Position>13</Position>
       <Comment>公积金比率</Comment>
       <DataType>float|0s</DataType>
     </column>
-    <column id="493" parent="277" name="name">
+    <column id="501" parent="277" name="name">
       <Position>14</Position>
       <DataType>varchar(32)|0s</DataType>
     </column>
-    <key id="494" parent="277" name="PRIMARY">
+    <key id="502" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="495" parent="278" name="id">
+    <column id="503" parent="278" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="496" parent="278" name="mid">
+    <column id="504" parent="278" name="mid">
       <Position>2</Position>
       <Comment>消息id</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="497" parent="278" name="type">
+    <column id="505" parent="278" name="type">
       <Position>3</Position>
       <Comment>0表示群发消息</Comment>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="498" parent="278" name="hrid">
+    <column id="506" parent="278" name="hrid">
       <Position>4</Position>
       <Comment>这条消息是给谁的</Comment>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="499" parent="278" name="state">
+    <column id="507" parent="278" name="state">
       <Position>5</Position>
       <Comment>0 未读 1 已读</Comment>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="500" parent="278" name="sysmsg_ibfk_1">
+    <index id="508" parent="278" name="sysmsg_ibfk_1">
       <ColNames>mid</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="501" parent="278" name="hrid">
+    <index id="509" parent="278" name="hrid">
       <ColNames>hrid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="502" parent="278" name="PRIMARY">
+    <key id="510" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="503" parent="278" name="sysmsg_ibfk_1">
+    <foreign-key id="511" parent="278" name="sysmsg_ibfk_1">
       <ColNames>mid</ColNames>
       <RefTableName>msgcontent</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="504" parent="278" name="sysmsg_ibfk_2">
+    <foreign-key id="512" parent="278" name="sysmsg_ibfk_2">
       <ColNames>hrid</ColNames>
       <RefTableName>hr</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <argument id="505" parent="279" name="depName">
+    <argument id="513" parent="279" name="depName">
       <Position>1</Position>
       <DataType>varchar(32)|0s</DataType>
     </argument>
-    <argument id="506" parent="279" name="parentId">
+    <argument id="514" parent="279" name="parentId">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="507" parent="279" name="enabled">
+    <argument id="515" parent="279" name="enabled">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
     </argument>
-    <argument id="508" parent="279" name="result">
+    <argument id="516" parent="279" name="result">
       <Position>4</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="509" parent="279" name="result2">
+    <argument id="517" parent="279" name="result2">
       <Position>5</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="510" parent="280" name="did">
+    <argument id="518" parent="280" name="did">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="511" parent="280" name="result">
+    <argument id="519" parent="280" name="result">
       <Position>2</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>

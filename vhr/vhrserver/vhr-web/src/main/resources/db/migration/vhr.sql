@@ -1215,9 +1215,13 @@ INSERT INTO `nation` VALUES (56, '基诺族');
 DROP TABLE IF EXISTS `oplog`;
 CREATE TABLE `oplog`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `addDate` date NULL DEFAULT NULL COMMENT '添加日期',
-  `operate` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '操作内容',
   `hrid` int(11) NULL DEFAULT NULL COMMENT '操作员ID',
+  `create_date` date NULL DEFAULT NULL COMMENT '添加日期',
+  `operate` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '操作内容',
+  `method` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '执行的方法-类全命名.方法',
+  `params` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '传入的参数',
+  `host` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '主机',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '地址',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `hrid`(`hrid`) USING BTREE,
   CONSTRAINT `oplog_ibfk_1` FOREIGN KEY (`hrid`) REFERENCES `hr` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -1379,6 +1383,8 @@ INSERT INTO `sysmsg` VALUES (78, 18, 0, 5, 0);
 INSERT INTO `sysmsg` VALUES (79, 18, 0, 10, 0);
 INSERT INTO `sysmsg` VALUES (80, 18, 0, 11, 0);
 INSERT INTO `sysmsg` VALUES (81, 18, 0, 12, 0);
+
+
 
 -- ----------------------------
 -- Procedure structure for addDep

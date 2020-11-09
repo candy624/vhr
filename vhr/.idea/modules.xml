@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/vhr.iml" filepath="$PROJECT_DIR$/vhr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vhrserver/vhr-common/vhr-common.iml" filepath="$PROJECT_DIR$/vhrserver/vhr-common/vhr-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/vhrserver/vhr-mapper/vhr-mapper.iml" filepath="$PROJECT_DIR$/vhrserver/vhr-mapper/vhr-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/vhrserver/vhr-model/vhr-model.iml" filepath="$PROJECT_DIR$/vhrserver/vhr-model/vhr-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/vhrserver/vhr-service/vhr-service.iml" filepath="$PROJECT_DIR$/vhrserver/vhr-service/vhr-service.iml" />

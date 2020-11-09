@@ -1,8 +1,8 @@
 package org.javaboy.vhr.web.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.Hr;
-import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.service.HrService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

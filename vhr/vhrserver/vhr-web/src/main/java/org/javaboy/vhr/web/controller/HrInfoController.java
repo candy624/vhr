@@ -1,7 +1,9 @@
 package org.javaboy.vhr.web.controller;
 
+import org.javaboy.vhr.common.annotation.Log;
+import org.javaboy.vhr.common.enums.BusinessType;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.Hr;
-import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.service.HrService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -28,6 +30,7 @@ public class HrInfoController {
     }
 
     @PostMapping("/hr/info")
+    @Log(title = "人事管理", businessType = BusinessType.UPDATE)
     public RespBean updateHr(@RequestBody Hr hr, Authentication authentication) {
         if (hrService.updateHr(hr) == 1) {
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(hr, authentication.getCredentials(), authentication.getAuthorities()));
@@ -37,6 +40,7 @@ public class HrInfoController {
     }
 
     @PostMapping("/hr/pass")
+    @Log(title = "人事管理", businessType = BusinessType.UPDATE)
     public RespBean updateHrPasswd(@RequestBody Map<String, Object> info) {
         String oldPass = (String) info.get("oldpass");
         String pass = (String) info.get("pass");

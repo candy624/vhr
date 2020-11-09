@@ -1,6 +1,6 @@
 package org.javaboy.vhr.web.exception;
 
-import org.javaboy.vhr.model.RespBean;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

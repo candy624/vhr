@@ -1,7 +1,9 @@
 package org.javaboy.vhr.web.controller.system.basic;
 
+import org.javaboy.vhr.common.annotation.Log;
+import org.javaboy.vhr.common.enums.BusinessType;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.Department;
-import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.service.DepartmentService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,7 @@ public class DepartmentController {
     }
 
     @PostMapping("/")
+    @Log(title = "部门管理", businessType = BusinessType.INSERT)
     public RespBean addDep(@RequestBody Department department) {
         departmentService.addDep(department);
         if (department.getResult() == 1) {
@@ -32,6 +35,7 @@ public class DepartmentController {
     }
 
     @DeleteMapping("/{id}")
+    @Log(title = "部门管理", businessType = BusinessType.DELETE)
     public RespBean deleteDepById(@PathVariable Integer id) {
         Department department = new Department();
         department.setId(id);

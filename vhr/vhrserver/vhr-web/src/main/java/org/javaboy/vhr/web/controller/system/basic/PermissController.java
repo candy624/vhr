@@ -1,7 +1,9 @@
 package org.javaboy.vhr.web.controller.system.basic;
 
+import org.javaboy.vhr.common.annotation.Log;
+import org.javaboy.vhr.common.enums.BusinessType;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.Menu;
-import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.model.Role;
 import org.javaboy.vhr.service.MenuService;
 import org.javaboy.vhr.service.RoleService;
@@ -38,6 +40,7 @@ public class PermissController {
     }
 
     @PutMapping("/")
+    @Log(title = "权限管理", businessType = BusinessType.UPDATE)
     public RespBean updateMenuRole(Integer rid, Integer[] mids) {
         if (menuService.updateMenuRole(rid, mids)) {
             return RespBean.ok("更新成功!");
@@ -46,6 +49,7 @@ public class PermissController {
     }
 
     @PostMapping("/")
+    @Log(title = "权限管理", businessType = BusinessType.INSERT)
     public RespBean addRole(@RequestBody Role role) {
         if (roleService.addRole(role) == 1) {
             return RespBean.ok("添加成功!");
@@ -54,6 +58,7 @@ public class PermissController {
     }
 
     @DeleteMapping("/{id}")
+    @Log(title = "权限管理", businessType = BusinessType.DELETE)
     public RespBean deleteRoleById(@PathVariable Integer id) {
         if (roleService.deleteRoleById(id) == 1) {
             return RespBean.ok("删除成功!");

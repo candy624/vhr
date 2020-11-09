@@ -1,8 +1,7 @@
-package org.javaboy.vhr.model;
+package org.javaboy.vhr.common.lang;
 
 /**
- * 响应信息
- * Created by candy on 2020/10/25.
+ * Created by candy on 2020/11/3.
  */
 public class RespBean {
     private Integer status;

@@ -1,7 +1,9 @@
 package org.javaboy.vhr.web.controller.system.basic;
 
+import org.javaboy.vhr.common.annotation.Log;
+import org.javaboy.vhr.common.enums.BusinessType;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.JobLevel;
-import org.javaboy.vhr.model.RespBean;
 import org.javaboy.vhr.service.JobLevelService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,7 @@ public class JobLevelController {
     }
 
     @PostMapping("/")
+    @Log(title = "职称管理", businessType = BusinessType.INSERT)
     public RespBean addJobLevel(@RequestBody JobLevel jobLevel) {
         if (jobLevelService.addJobLevel(jobLevel) == 1) {
             return RespBean.ok("添加成功!");
@@ -31,6 +34,7 @@ public class JobLevelController {
     }
 
     @PutMapping("/")
+    @Log(title = "职称管理", businessType = BusinessType.UPDATE)
     public RespBean updateJobLevelById(@RequestBody JobLevel jobLevel) {
         if (jobLevelService.updateJobLevelById(jobLevel) == 1) {
             return RespBean.ok("更新成功!");
@@ -39,6 +43,7 @@ public class JobLevelController {
     }
 
     @DeleteMapping("/{id}")
+    @Log(title = "职称管理", businessType = BusinessType.DELETE)
     public RespBean deleteJobLevelById(@PathVariable Integer id) {
         if (jobLevelService.deleteJobLevelById(id) == 1) {
             return RespBean.ok("删除成功!");
@@ -47,6 +52,7 @@ public class JobLevelController {
     }
 
     @DeleteMapping("/")
+    @Log(title = "职称管理", businessType = BusinessType.DELETE)
     public RespBean deleteJobLevelByIds(Integer[] ids) {
         if (jobLevelService.deleteJobLevelsByIds(ids) == 1) {
             return RespBean.ok("删除成功!");

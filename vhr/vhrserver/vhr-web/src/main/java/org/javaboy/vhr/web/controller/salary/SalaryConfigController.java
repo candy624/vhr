@@ -1,6 +1,6 @@
 package org.javaboy.vhr.web.controller.salary;
 
-import org.javaboy.vhr.model.RespBean;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.model.RespPageBean;
 import org.javaboy.vhr.model.Salary;
 import org.javaboy.vhr.service.EmployeeService;

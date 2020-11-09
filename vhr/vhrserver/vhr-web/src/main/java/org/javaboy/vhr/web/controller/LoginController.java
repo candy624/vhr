@@ -1,6 +1,6 @@
 package org.javaboy.vhr.web.controller;
 
-import org.javaboy.vhr.model.RespBean;
+import org.javaboy.vhr.common.lang.RespBean;
 import org.javaboy.vhr.web.config.VerificationCode;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
